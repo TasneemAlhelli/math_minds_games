@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 100px 3fr 50px;
+  height: 100vh;
+}
+
+header {
+  background-color: aquamarine;
+}
+
+footer {
+  background-color: beige;
+}
+
+.games {
+  background-color: bisque;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#first-game {
+  background-color: lightblue;
+}
+
+#second-game {
+  background-color: lightcoral;
+}
+
+#third-game {
+  background-color: lightgray;
+}
+
+section {
+  background-color: blueviolet;
+  display: grid;
+}
+
+.game-board {
+  background-color: lightcyan;
+}
+
+.game-board > section {
+  background-color: white;
+  width: 70%;
+  height: 90%;
+  margin: 40px auto 0 auto;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.equation {
+  background-color: azure;
+}
+
+.equation > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  margin: 25px auto 0 auto;
+  font-size: 36px;
+  background-color: antiquewhite;
+}
