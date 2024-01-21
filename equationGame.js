@@ -52,9 +52,14 @@ const displayEquation = () => {
 }
 
 /* EVENT LISNTERS */
+playBtn.addEventListener('click', () => {
+  // display game
+  instructionSection.style.display = 'none'
+  gameSection.style.display = 'grid'
 
-// Run the Game
-getList()
-displayEquation()
-setTimer()
-gameTimer = setInterval(startGame, 1000)
+  // Run the Game
+  getList()
+  displayEquation()
+  setTimer()
+  gameTimer = setInterval(startGame, 1000)
+})

@@ -7,6 +7,9 @@ const eqSection = document.querySelector('.equation')
 const optionSection = document.querySelector('.options')
 const scoreEl = document.querySelector('#score')
 const timerEl = document.querySelector('#timer')
+const playBtn = document.querySelector('#playBtn')
+const instructionSection = document.querySelector('.instructionSection')
+const gameSection = document.querySelector('.gameSection')
 
 let level = ''
 let list = []
