@@ -26,7 +26,7 @@ class Equation {
 
 // Generate Easy Equations
 new Equation('15 ÷ 5 × 4', [12, 15, 16, 9], 12, 'easy')
-new Equation('1 + 3 × 2', [11, 8, 5, 10], 7, 'easy')
+new Equation('1 + 3 × 2', [11, 7, 5, 10], 7, 'easy')
 new Equation('3 - 1 + 12', [11, 12, 14, 18], 14, 'easy')
 new Equation('17 - 5 - 2', [10, 13, 12, 9], 10, 'easy')
 new Equation('9 - 32 ÷ 4', [2, 1, 3, 5], 1, 'easy')

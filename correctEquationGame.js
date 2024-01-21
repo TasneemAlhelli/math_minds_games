@@ -14,7 +14,7 @@ const displayEquation = () => {
   let eqStatment = `${eq.equation} = ${ans}`
 
   // display equation and answers
-  eqSection.children[0].innerHTML = eqStatment
+  eqSection.innerHTML = eqStatment
 
   // set correct answer
   correctAnswer = ans == eq.correct
@@ -53,7 +53,13 @@ ansBtns.forEach((btn) => {
 })
 
 // Run the game
-getList()
-displayEquation()
-setTimer()
-gameTimer = setInterval(startGame, 1000)
+playBtn.addEventListener('click', () => {
+  // display game
+  instructionSection.style.display = 'none'
+  gameSection.style.display = 'grid'
+
+  getList()
+  displayEquation()
+  setTimer()
+  gameTimer = setInterval(startGame, 1000)
+})

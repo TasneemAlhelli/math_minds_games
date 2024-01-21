@@ -1,9 +1,9 @@
-/* #AAA259 GREEN */
-/* #F9D4A7 BEGIE */
-/* #DD7B3C ORANGE */
-/* #DBD6C3 GREY */
-/* #AC3515 RED */
-
+/* #8697A6 BLUEE */
+/* #F2E2C4 BEGIE */
+/* #F2AF5C YELLOW */
+/* #F28749 ORANGE */
+/* #8C4F2B BROWN */
+/* #B2653F LIGHT BROWN */
 body {
   margin: 0;
   padding: 0;
@@ -11,11 +11,13 @@ body {
   grid-template-rows: 150px 3fr 50px;
   height: 100vh;
   font-family: Helvetica, sans-serif;
+  color: #f2e2c4;
 }
 
 header {
   text-align: center;
-  background-color: #dd7b3c;
+  color: #8c4f2b;
+  background-color: #f2e2c4;
 }
 
 header p {
@@ -26,11 +28,12 @@ header p {
 
 footer {
   text-align: center;
-  background-color: #aaa259;
+  color: #f2e2c4;
+  background-color: #8c4f2b;
 }
 
 .games {
-  background-color: white;
+  background-color: #f2e2c4;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -43,38 +46,42 @@ footer {
   font-size: 20px;
   margin: 20px 10px;
   height: 30%;
+  color: #f2e2c4;
 }
 
 #first-game {
-  background-color: #f9d4a7;
+  background-color: #f28749;
 }
 
 #second-game {
-  background-color: #dbd6c3;
+  background-color: #8697a6;
 }
 
 #third-game {
-  background-color: #f9d4a7;
+  background-color: #f28749;
 }
 
 section {
-  background-color: blueviolet;
   display: grid;
 }
 
 .game-board {
-  background-color: lightcyan;
+  background-color: #f2e2c4;
 }
 
 .game-board > section {
+  box-shadow: 0 0 30px #8c4f2b;
+
   background-color: white;
   width: 70%;
   height: 90%;
-  margin: 40px auto 0 auto;
+  margin: 0 auto;
+  /* margin: 40px auto 0 auto; */
 }
 
 .instructionSection {
   text-align: center;
+  color: #8c4f2b;
 }
 
 .instructionSection p {
@@ -93,17 +100,52 @@ section {
   grid-template-columns: 1fr 1fr;
 }
 
-.equation {
-  background-color: azure;
+.options > button {
+  place-self: center;
+  width: 80%;
+  height: 80%;
+  font-size: 25px;
 }
 
-.equation > span {
+.equation {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 70%;
   height: 80%;
-  margin: 25px auto 0 auto;
+  margin: 0 auto;
   font-size: 36px;
-  background-color: antiquewhite;
+  background-color: #f28749;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #8c4f2b;
+  border: none;
+  font-size: 15px;
+  color: #f2e2c4;
+  padding: 12px 12px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #b2653f;
+  cursor: pointer;
+}
+
+#playBtn {
+  width: 40%;
+  height: 50%;
+  font-size: 20px;
+  place-self: center;
+}
+
+.gameData {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  background-color: white;
+  color: #8697a6;
 }

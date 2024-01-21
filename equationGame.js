@@ -32,7 +32,7 @@ const displayEquation = () => {
   const eq = list.splice(random, 1)[0]
 
   // display equation and answers
-  eqSection.children[0].innerHTML = eq.equation
+  eqSection.innerHTML = eq.equation
   if (document.URL.includes('equationGame.html')) {
     optionSection.innerHTML = ''
     eq.options.forEach((option) => {
