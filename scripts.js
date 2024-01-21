@@ -15,6 +15,7 @@ let list = []
 let correctAnswer = 0
 let score = 0
 let timer = 20
+let gameTimer = null
 
 /** FUNCTIONS */
 const setTimer = () => {
@@ -30,11 +31,21 @@ const startGame = () => {
 
   // check if time over
   if (timer < 0) {
-    console.log('game over')
+    terminateGame()
+  } else {
+    // display timer
+    setTimer()
   }
+}
 
-  // display timer
-  setTimer()
+const terminateGame = (btn = null) => {
+  // stop timer
+  clearInterval(gameTimer)
+
+  // change btn color
+  if (btn) {
+    btn.style.backgroundColor = 'red'
+  }
 }
 
 const evaluateAns = (btn) => {
@@ -54,10 +65,11 @@ const evaluateAns = (btn) => {
       getList()
     }
 
-    //display next equation
+    // display next equation
     displayEquation()
   } else {
-    console.log('wrong')
+    // terminate game
+    terminateGame(btn)
   }
 }
 
@@ -112,6 +124,6 @@ const displayEquation = () => {
 getList()
 displayEquation()
 setTimer()
-setInterval(startGame, 1000)
+gameTimer = setInterval(startGame, 1000)
 
 /** EVENT LISNTERS */
