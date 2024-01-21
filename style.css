@@ -1,35 +1,60 @@
+/* #AAA259 GREEN */
+/* #F9D4A7 BEGIE */
+/* #DD7B3C ORANGE */
+/* #DBD6C3 GREY */
+/* #AC3515 RED */
+
 body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-rows: 100px 3fr 50px;
+  grid-template-rows: 150px 3fr 50px;
   height: 100vh;
+  font-family: Helvetica, sans-serif;
 }
 
 header {
-  background-color: aquamarine;
+  text-align: center;
+  background-color: #dd7b3c;
+}
+
+header p {
+  font-size: 20px;
+  width: 50%;
+  margin: 0 auto;
 }
 
 footer {
-  background-color: beige;
+  text-align: center;
+  background-color: #aaa259;
 }
 
 .games {
-  background-color: bisque;
+  background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.games > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 20px 10px;
+  height: 30%;
+}
+
 #first-game {
-  background-color: lightblue;
+  background-color: #f9d4a7;
 }
 
 #second-game {
-  background-color: lightcoral;
+  background-color: #dbd6c3;
 }
 
 #third-game {
-  background-color: lightgray;
+  background-color: #f9d4a7;
 }
 
 section {
