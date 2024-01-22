@@ -10,7 +10,8 @@ body {
   display: grid;
   grid-template-rows: 150px 3fr 50px;
   height: 100vh;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Londrina Shadow', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: #f2e2c4;
 }
 
