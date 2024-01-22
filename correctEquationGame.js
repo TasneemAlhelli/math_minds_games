@@ -3,7 +3,6 @@ const ansBtns = document.querySelectorAll('.ansBtn')
 
 /* FUNCTIONS */
 const displayEquation = () => {
-  console.log('displayEquation')
   // get random equaition
   let random = Math.floor(Math.random() * list.length)
   const eq = list.splice(random, 1)[0]
@@ -40,7 +39,7 @@ const evaluateAns = (btn) => {
     // display next equation
     displayEquation()
   } else {
-    terminateGame()
+    terminateGame(btn, 'GAME OVER!')
   }
 }
 

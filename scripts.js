@@ -6,6 +6,7 @@ const advanceList = Equation.advance
 const eqSection = document.querySelector('.equation')
 const optionSection = document.querySelector('.options')
 const scoreEl = document.querySelector('#score')
+const levelEl = document.querySelector('#level')
 const timerEl = document.querySelector('#timer')
 const playBtn = document.querySelector('#playBtn')
 const instructionSection = document.querySelector('.instructionSection')
@@ -24,6 +25,9 @@ const setTimer = () => {
   let secs = timer % 60
   let time = mins > 0 ? `${mins}:${secs}` : secs
   timerEl.innerHTML = time
+  if (timer <= 10) {
+    timerEl.style.color = 'red'
+  }
 }
 
 const startGame = () => {
@@ -32,14 +36,14 @@ const startGame = () => {
 
   // check if time over
   if (timer < 0) {
-    terminateGame()
+    terminateGame(null, 'TIME IS UP!')
   } else {
     // display timer
     setTimer()
   }
 }
 
-const terminateGame = (btn = null) => {
+const terminateGame = (btn = null, msg) => {
   // stop timer
   clearInterval(gameTimer)
 
@@ -47,6 +51,14 @@ const terminateGame = (btn = null) => {
   if (btn) {
     btn.style.backgroundColor = 'red'
   }
+
+  // show message
+  levelEl.innerHTML = msg
+
+  // disable buttons
+  Array.from(optionSection.children).forEach((btn) => {
+    btn.style.pointerEvents = 'none'
+  })
 }
 
 const getList = () => {
@@ -72,6 +84,8 @@ const getList = () => {
 
     console.log('LEVEL CHANGED: ADVANCE')
   }
+
+  levelEl.innerHTML = `${level.toUpperCase()}`
 }
 
 /** EVENT LISNTERS */

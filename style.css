@@ -54,7 +54,7 @@ footer {
 }
 
 #first-game {
-  background-color: #f28749;
+  background-color: #f2af5c;
 }
 
 #second-game {
@@ -107,18 +107,26 @@ section {
 
 .options > button {
   place-self: center;
-  width: 70%;
-  height: 70%;
+  width: 60%;
+  height: 60%;
   font-size: 25px;
+  background-color: #f2af5c;
 }
 
+.ansBtn {
+  width: 35% !important;
+  height: 35% !important;
+  font-size: 40px !important;
+}
 .equation {
   place-self: center;
   place-content: center;
   width: 100%;
   height: 30%;
-  font-size: 36px;
-  background-color: #f2af5c;
+  font-size: 50px;
+  color: #8c4f2b;
+  /* background-color: #f2af5c; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button {
@@ -148,6 +156,11 @@ button:hover {
   justify-content: space-around;
   align-items: center;
   height: 60px;
-  background-color: white;
-  color: #8697a6;
+  background-color: #f2af5c;
+  font-size: 18px;
+  /* color: #8697a6; */
+}
+
+#level {
+  color: #8c4f2b;
 }

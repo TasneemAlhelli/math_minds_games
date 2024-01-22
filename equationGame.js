@@ -4,6 +4,9 @@
 const evaluateAns = (btn) => {
   let answer = parseInt(btn.textContent)
   if (answer == correctAnswer) {
+    // channe background color
+    btn.style.backgroundColor = 'green'
+
     // increase timer
     timer += 5
     setTimer()
@@ -22,7 +25,7 @@ const evaluateAns = (btn) => {
     displayEquation()
   } else {
     // terminate game
-    terminateGame(btn)
+    terminateGame(btn, 'GAME OVER!')
   }
 }
 
@@ -32,7 +35,7 @@ const displayEquation = () => {
   const eq = list.splice(random, 1)[0]
 
   // display equation and answers
-  eqSection.innerHTML = eq.equation
+  eqSection.innerHTML = `${eq.equation} = ?`
   if (document.URL.includes('equationGame.html')) {
     optionSection.innerHTML = ''
     eq.options.forEach((option) => {
