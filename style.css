@@ -20,6 +20,9 @@ header {
   color: #8c4f2b;
   background-color: #f2e2c4;
 }
+header img {
+  margin-top: 20px;
+}
 
 header p {
   font-size: 20px;
@@ -71,12 +74,12 @@ section {
 }
 
 .game-board > section {
-  box-shadow: 0 0 30px #8c4f2b;
-
+  box-shadow: 0 0 30px hsl(22, 53%, 36%);
   background-color: white;
   width: 70%;
   height: 90%;
   margin: 0 auto;
+
   /* margin: 40px auto 0 auto; */
 }
 
@@ -94,6 +97,7 @@ section {
 
 .gameSection {
   display: none;
+  grid-template-rows: 70px 1fr 1fr;
 }
 
 .options {
@@ -103,21 +107,18 @@ section {
 
 .options > button {
   place-self: center;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   font-size: 25px;
 }
 
 .equation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  height: 80%;
-  margin: 0 auto;
+  place-self: center;
+  place-content: center;
+  width: 100%;
+  height: 30%;
   font-size: 36px;
-  background-color: #f28749;
-  border-radius: 10px;
+  background-color: #f2af5c;
 }
 
 button {
