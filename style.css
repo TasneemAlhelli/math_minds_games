@@ -1,14 +1,8 @@
-/* #8697A6 BLUEE */
-/* #F2E2C4 BEGIE */
-/* #F2AF5C YELLOW */
-/* #F28749 ORANGE */
-/* #8C4F2B BROWN */
-/* #B2653F LIGHT BROWN */
 body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-rows: 150px 3fr 50px;
+  grid-template-rows: 175px 3fr 50px;
   height: 100vh;
   font-family: 'Londrina Shadow', sans-serif;
   font-family: 'Ubuntu', sans-serif;
@@ -20,13 +14,14 @@ header {
   color: #8c4f2b;
   background-color: #f2e2c4;
 }
+
 header img {
   margin-top: 20px;
 }
 
 header p {
-  font-size: 20px;
-  width: 50%;
+  text-align: center;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -62,7 +57,7 @@ footer {
 }
 
 #third-game {
-  background-color: #f28749;
+  background-color: #f2af5c;
 }
 
 section {
@@ -89,6 +84,26 @@ section {
 .scoreSection {
   text-align: center;
   color: #8c4f2b;
+}
+
+.instructions {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+ol > li {
+  font-size: 20px;
+}
+
+ul > li {
+  font-size: 15px;
+  color: #8697a6;
 }
 
 .instructionSection p {
