@@ -5,7 +5,7 @@ const ansBtns = document.querySelectorAll('.ansBtn')
 const displayEquation = () => {
   console.log('correctEquationGame.js')
 
-  // get random equaition
+  // get random equation
   let random = Math.floor(Math.random() * list.length)
   const eq = list.splice(random, 1)[0]
 
@@ -17,6 +17,12 @@ const displayEquation = () => {
   // display equation and answers
   eqSection.innerHTML = eqStatment
 
+  // set currect equation
+  currectEq = eq
+
+  // set equation display time
+  eqDisplayTime = timer
+
   // set correct answer
   correctAnswer = ans == eq.correct
   console.log('correct answer: ', correctAnswer)
@@ -25,6 +31,9 @@ const displayEquation = () => {
 const evaluateAns = (btn) => {
   const answer = JSON.parse(btn.value)
   if (answer == correctAnswer) {
+    // check timing
+    let answeIn = eqDisplayTime - timer
+
     // increase total correct answer
     totalCorrectAns++
 
@@ -33,10 +42,16 @@ const evaluateAns = (btn) => {
     setTimer()
 
     // record score
-    score += 10
+    if (answeIn > 5) {
+      // score +
+      score += 3
+    } else {
+      score += currectEq.points
+    }
+    scoreEl.innerHTML = score
     if (
-      (score >= 100 && level === 'easy') ||
-      (score >= 300 && level === 'intermediate')
+      (score >= intermediateLevel && level === 'easy') ||
+      (score >= advanceLevel && level === 'intermediate')
     ) {
       getList()
     }

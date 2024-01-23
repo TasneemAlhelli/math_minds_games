@@ -11,12 +11,15 @@ class Equation {
 
     switch (level) {
       case 'easy':
+        this.points = 5
         Equation.easy.push(this)
         break
       case 'intermediate':
+        this.points = 10
         Equation.intermediate.push(this)
         break
       case 'advance':
+        this.points = 10
         Equation.advance.push(this)
         break
       default:
@@ -119,11 +122,3 @@ new Equation('(48 ÷ 6) × (2 + 1) + 1', [25, 26, 27, 28], 25, 'advance')
 new Equation('125 - 2 × (25 ÷ 5)', [115, 116, 117, 118], 115, 'advance')
 new Equation('(100 ÷ 5) × 14', [279, 280, 290, 300], 280, 'advance')
 new Equation('135 - (27 ÷ 3) × 2', [115, 116, 117, 118], 117, 'advance')
-
-// Store Equations in Local Storage
-window.localStorage.setItem('easyEqs', JSON.stringify(Equation.easy))
-window.localStorage.setItem(
-  'intermediateEqs',
-  JSON.stringify(Equation.intermediate)
-)
-window.localStorage.setItem('advanceEqs', JSON.stringify(Equation.advance))

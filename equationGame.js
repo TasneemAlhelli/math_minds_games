@@ -1,9 +1,12 @@
 /* GLOBAL VARIABLES */
 
 /* FUNCTIONS */
-const evaluateAns = (btn) => {
+const evaluateAns = (btn, eq) => {
   let answer = parseInt(btn.textContent)
   if (answer == correctAnswer) {
+    // check timing
+    let answeIn = eqDisplayTime - timer
+
     // increase total correct answer
     totalCorrectAns++
 
@@ -15,11 +18,16 @@ const evaluateAns = (btn) => {
     setTimer()
 
     // record score
-    score += 10
+    if (answeIn > 5) {
+      // score +
+      score += 3
+    } else {
+      score += eq.points
+    }
     scoreEl.innerHTML = score
     if (
-      (score >= 100 && level === 'easy') ||
-      (score >= 300 && level === 'intermediate')
+      (score >= intermediateLevel && level === 'easy') ||
+      (score >= advanceLevel && level === 'intermediate')
     ) {
       getList()
     }
@@ -46,12 +54,16 @@ const displayEquation = () => {
       btn.textContent = option
       // add event listner
       btn.addEventListener('click', () => {
-        evaluateAns(btn)
+        evaluateAns(btn, eq)
       })
 
       optionSection.appendChild(btn)
     })
   }
+
+  // set equation display time
+  eqDisplayTime = timer
+
   // set correct answer
   correctAnswer = eq.correct
   console.log(correctAnswer)

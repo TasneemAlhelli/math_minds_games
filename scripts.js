@@ -21,9 +21,14 @@ let level = ''
 let list = []
 let correctAnswer = 0
 let score = 0
-let timer = 20
+let timer = 10
 let gameTimer = null
 let totalCorrectAns = 0
+let eqDisplayTime = 0
+let currectEq = null
+
+const intermediateLevel = 50
+const advanceLevel = 100
 
 /** FUNCTIONS */
 const setTimer = () => {
@@ -86,27 +91,23 @@ const terminateGame = (btn = null, msg) => {
 }
 
 const getList = () => {
-  if (score >= 0 && score < 100) {
+  if (score >= 0 && score < intermediateLevel) {
     level = 'easy'
     list = easyList
-  } else if (score >= 100 && score < 300) {
+  } else if (score >= intermediateLevel && score < advanceLevel) {
     level = 'intermediate'
     list = intermediateList
 
     // increase timer
-    timer += 10
+    timer += 5
     setTimer()
-
-    console.log('LEVEL CHANGED: INTERMEDIATE')
   } else {
     level = 'advance'
     list = advanceList
 
     // increase timer
-    timer += 20
+    timer += 5
     setTimer()
-
-    console.log('LEVEL CHANGED: ADVANCE')
   }
 
   levelEl.innerHTML = `${level.toUpperCase()}`
@@ -122,7 +123,7 @@ const resetGame = () => {
   correctAnswer = 0
   correctAnswer = 0
   score = 0
-  timer = 20
+  timer = 10
   totalCorrectAns = 0
 
   // enable answer buttons
