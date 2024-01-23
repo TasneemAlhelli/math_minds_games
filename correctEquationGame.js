@@ -3,6 +3,8 @@ const ansBtns = document.querySelectorAll('.ansBtn')
 
 /* FUNCTIONS */
 const displayEquation = () => {
+  console.log('correctEquationGame.js')
+
   // get random equaition
   let random = Math.floor(Math.random() * list.length)
   const eq = list.splice(random, 1)[0]
@@ -23,6 +25,9 @@ const displayEquation = () => {
 const evaluateAns = (btn) => {
   const answer = JSON.parse(btn.value)
   if (answer == correctAnswer) {
+    // increase total correct answer
+    totalCorrectAns++
+
     // increase timer
     timer += 5
     setTimer()
@@ -39,12 +44,11 @@ const evaluateAns = (btn) => {
     // display next equation
     displayEquation()
   } else {
-    terminateGame(btn, 'GAME OVER!')
+    terminateGame(btn, 'GAME OVER')
   }
 }
 
 /* EVENT LISNTERS */
-console.log(ansBtns)
 ansBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     evaluateAns(btn)

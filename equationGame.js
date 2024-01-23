@@ -4,6 +4,9 @@
 const evaluateAns = (btn) => {
   let answer = parseInt(btn.textContent)
   if (answer == correctAnswer) {
+    // increase total correct answer
+    totalCorrectAns++
+
     // channe background color
     btn.style.backgroundColor = 'green'
 
@@ -25,7 +28,7 @@ const evaluateAns = (btn) => {
     displayEquation()
   } else {
     // terminate game
-    terminateGame(btn, 'GAME OVER!')
+    terminateGame(btn, 'GAME OVER')
   }
 }
 

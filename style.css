@@ -79,11 +79,14 @@ section {
   width: 70%;
   height: 90%;
   margin: 0 auto;
-
-  /* margin: 40px auto 0 auto; */
 }
 
-.instructionSection {
+.scoreSection {
+  display: none;
+}
+
+.instructionSection,
+.scoreSection {
   text-align: center;
   color: #8c4f2b;
 }
@@ -144,7 +147,8 @@ button:hover {
   cursor: pointer;
 }
 
-#playBtn {
+#playBtn,
+#playAgain {
   width: 40%;
   height: 50%;
   font-size: 20px;
