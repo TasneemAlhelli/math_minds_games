@@ -6,7 +6,7 @@ const evaluateAns = (btn, eq) => {
   let answer = parseInt(btn.textContent)
   if (answer == correctAnswer) {
     // check timing
-    let answeIn = eqDisplayTime - timer
+    let answerIn = eqDisplayTime - timer
 
     // increase total correct answer
     totalCorrectAns++
@@ -19,7 +19,7 @@ const evaluateAns = (btn, eq) => {
     setTimer()
 
     // record score
-    if (answeIn > 5) {
+    if (answerIn > 5) {
       // score +
       score += 3
     } else {
@@ -43,25 +43,29 @@ const evaluateAns = (btn, eq) => {
 
 // displayEquation function to display the equation with four different options
 const displayEquation = () => {
+  // check list length
+  if (list.length === 0) {
+    terminateGame(null, 'CONGRATULATIONS! YOU WON!')
+  }
+
   // get random equation
   let random = Math.floor(Math.random() * list.length)
   const eq = list.splice(random, 1)[0]
 
   // display equation and answers
   eqSection.innerHTML = `${eq.equation} = ?`
-  if (document.URL.includes('equationGame.html')) {
-    optionSection.innerHTML = ''
-    eq.options.forEach((option) => {
-      const btn = document.createElement('button')
-      btn.textContent = option
-      // add event listner
-      btn.addEventListener('click', () => {
-        evaluateAns(btn, eq)
-      })
+  optionSection.innerHTML = ''
 
-      optionSection.appendChild(btn)
+  eq.options.forEach((option) => {
+    const btn = document.createElement('button')
+    btn.textContent = option
+    // add event listner
+    btn.addEventListener('click', () => {
+      evaluateAns(btn, eq)
     })
-  }
+
+    optionSection.appendChild(btn)
+  })
 
   // set equation display time
   eqDisplayTime = timer

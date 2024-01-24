@@ -78,6 +78,7 @@ const matchCards = () => {
 
       // check score
       if (totalMatched == 8) {
+        clearInterval(gameTimer)
         showSummary('YOU WON!')
       }
     } else {
@@ -99,8 +100,6 @@ const clickedCard = (card) => {
   if (openCards.length == 2) {
     matchCards()
   }
-
-  checkScore()
 }
 
 /* EVENT LISTNERS */

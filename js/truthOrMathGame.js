@@ -30,7 +30,7 @@ const evaluateAns = (btn) => {
   const answer = JSON.parse(btn.value)
   if (answer == correctAnswer) {
     // check timing
-    let answeIn = eqDisplayTime - timer
+    let answerIn = eqDisplayTime - timer
 
     // increase total correct answer
     totalCorrectAns++
@@ -40,7 +40,7 @@ const evaluateAns = (btn) => {
     setTimer()
 
     // record score
-    if (answeIn > 5) {
+    if (answerIn > 5) {
       // score +
       score += 3
     } else {
