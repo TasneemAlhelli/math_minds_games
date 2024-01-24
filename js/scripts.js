@@ -86,7 +86,7 @@ const showSummary = (msg) => {
   if (windowsLocation.includes('equationShuffleGame.html')) {
     totalCorrectAnsEl.innerHTML = timerEl.innerHTML
   } else {
-    totalCorrectAnsEl.innerHTML = correctAnswer
+    totalCorrectAnsEl.innerHTML = totalCorrectAns
   }
 }
 
