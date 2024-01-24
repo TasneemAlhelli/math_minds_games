@@ -8,9 +8,11 @@ Welcome to Math Minds, an engaging educational games platform meticulously craft
 
 ![html-js-css][html-js-css]
 
-## Features
+## Live Link
 
-## Getting Startwd
+Click this link to explore the platform [https://math_minds.surge.sh/](https://math_minds.surge.sh/)
+
+## Getting Started
 
 1. Clone the repoistory
 
@@ -26,21 +28,38 @@ npm install
 
 ## Usage
 
+- Home page displays the games with a button to start playing
+
+  ![Home Page](https://i.ibb.co/w7qX1Sr/Screenshot-2024-01-24-at-3-41-48-PM.png)
+
 - Selecting the "Play now!" button will lead to the chosen game.
-  ![Home Page]()
-- Upon redirection to the game page, an instruction page will be displayed, and clicking the "Start Game" button will initiate the gameplay instantly.
-  ![Game Page]()
+
+  ![Play Button](https://i.ibb.co/6WWYSyN/Screenshot-2024-01-24-at-3-45-07-PM.png)
+
+- Upon redirection to the game page, an instruction page will be displayed.
+
+  ![Instruction Page](https://i.ibb.co/VM0N0PP/Screenshot-2024-01-24-at-3-46-15-PM.png)
+
+- Clicking the "Start Game" button on the instruction page will initiate the gameplay instantly.
+
+  ![Game Page](https://i.ibb.co/z2WvvvW/Screenshot-2024-01-24-at-3-53-11-PM.png)
+
 - Following the conclusion of the game, a summary page will emerge.
-  ![Summary Page]()
+
+  ![Summary Page](https://i.ibb.co/6YP6JP8/Screenshot-2024-01-24-at-3-55-01-PM.png)
+
 - To restart the game, simply click the "Play Again" button.
   Navigating to the home page is as easy as clicking on the website logo.
-  ![Restart Button]()
+
+  ![Restart Button](https://i.ibb.co/ZzYmbvP/Screenshot-2024-01-24-at-3-55-56-PM.png)
 
 ## Contact
 
 Tasneem Ali - [LinkedIn](https://www.linkedin.com/in/tasneem-jameel-ali/) - tasneem.jameel9@gmail.com
 
-Project Link - [https://github.com/TasneemAlhelli/math_minds_games](https://github.com/TasneemAlhelli/math_minds_games)
+Project GitHub Link - [https://github.com/TasneemAlhelli/math_minds_games](https://github.com/TasneemAlhelli/math_minds_games)
+
+Project Live Link - [https://math_minds.surge.sh/](https://math_minds.surge.sh/)
 
 ## Acknowledgments
 
