@@ -1,38 +1,47 @@
 /** GLOBAL VARIABLES */
+
+// equations' lists
 let easyList = Equation.easy
 let intermediateList = Equation.intermediate
 let advanceList = Equation.advance
 
+// sections
+const instructionSection = document.querySelector('.instructionSection')
+const gameSection = document.querySelector('.gameSection')
+const eqShuffleSection = document.querySelector('.equation-shuffle')
+const scoreSection = document.querySelector('.scoreSection')
 const eqSection = document.querySelector('.equation')
 const optionSection = document.querySelector('.options')
+
+// buttons
+const playBtn = document.querySelector('#playBtn')
+const playAgainBtn = document.querySelector('#playAgain')
+
+// elemens
 const scoreEl = document.querySelector('#score')
 const levelEl = document.querySelector('#level')
 const timerEl = document.querySelector('#timer')
-const playBtn = document.querySelector('#playBtn')
-const instructionSection = document.querySelector('.instructionSection')
-const gameSection = document.querySelector('.gameSection')
-const scoreSection = document.querySelector('.scoreSection')
 const finalScoreEl = document.querySelector('#finalScore')
 const totalCorrectAnsEl = document.querySelector('#totalCorrect')
 const gameMsgEl = document.querySelector('#gameMsg')
-const playAgainBtn = document.querySelector('#playAgain')
-const eqShuffleSection = document.querySelector('.equation-shuffle')
 
-let level = ''
+// game variables
 let list = []
-let correctAnswer = 0
-let score = 0
+let level = ''
+let eqDisplayTime = 0
 let timer = 10
 let gameTimer = null
+let score = 0
+let correctAnswer = 0
 let totalCorrectAns = 0
-let eqDisplayTime = 0
 let currectEq = null
 let windowsLocation = window.location.href
-
 const intermediateLevel = 50
 const advanceLevel = 100
 
 /** FUNCTIONS */
+
+// setTimer function to update the time on the page
 const setTimer = () => {
   const mins = Math.floor(timer / 60)
   let secs = timer % 60
@@ -43,6 +52,7 @@ const setTimer = () => {
   }
 }
 
+// startGame function to calculate the time over the game
 const startGame = (change = 'decrease') => {
   // decrease time
   if (change === 'increase') {
@@ -60,6 +70,7 @@ const startGame = (change = 'decrease') => {
   }
 }
 
+// showSummary function to display the summary after the game
 const showSummary = (msg) => {
   // display section
   gameSection.style.display = 'none'
@@ -79,6 +90,7 @@ const showSummary = (msg) => {
   }
 }
 
+// terminateGame function to end the game
 const terminateGame = (btn = null, msg) => {
   // stop timer
   clearInterval(gameTimer)
@@ -100,6 +112,7 @@ const terminateGame = (btn = null, msg) => {
   showSummary(msg)
 }
 
+// getList function to get the equations list and change the level of the game
 const getList = () => {
   if (score >= 0 && score < intermediateLevel) {
     level = 'easy'
@@ -123,6 +136,7 @@ const getList = () => {
   levelEl.innerHTML = `${level.toUpperCase()}`
 }
 
+// resetGame function to reset the game for next round
 const resetGame = () => {
   // Get all equation lists
   easyList = Equation.easy

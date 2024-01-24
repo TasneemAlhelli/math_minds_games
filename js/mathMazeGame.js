@@ -1,6 +1,7 @@
 /* GLOBAL VARIABLES */
 
 /* FUNCTIONS */
+// evaluateAns function to check the correctness of the answer
 const evaluateAns = (btn, eq) => {
   let answer = parseInt(btn.textContent)
   if (answer == correctAnswer) {
@@ -40,6 +41,7 @@ const evaluateAns = (btn, eq) => {
   }
 }
 
+// displayEquation function to display the equation with four different options
 const displayEquation = () => {
   // get random equation
   let random = Math.floor(Math.random() * list.length)
@@ -66,7 +68,6 @@ const displayEquation = () => {
 
   // set correct answer
   correctAnswer = eq.correct
-  console.log(correctAnswer)
 }
 
 /* EVENT LISNTERS */

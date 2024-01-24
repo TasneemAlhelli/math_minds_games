@@ -4,8 +4,7 @@ let totalMatched = 0
 timer = 0
 
 /* FUNCTIONS */
-const startTimer = () => {}
-
+// shuffleEquation function to get random equations
 const shuffleEquation = () => {
   let elements = []
   let shuffleList = Equation.easy
@@ -20,6 +19,7 @@ const shuffleEquation = () => {
   return elements
 }
 
+// displayEquation function to display the randomized equations
 const displayEquation = () => {
   const elements = shuffleEquation()
   eqShuffleSection.innerHTML = ''
@@ -34,6 +34,16 @@ const displayEquation = () => {
   })
 }
 
+// resetCards function to change background color and enable clicking
+const resetCards = () => {
+  openCards[0].style.backgroundColor = '#f2e2c4'
+  openCards[0].style.pointerEvents = ''
+  openCards[1].style.backgroundColor = '#f2e2c4'
+  openCards[1].style.pointerEvents = ''
+  openCards = []
+}
+
+// matcgCards functino to check for matching clicked cards
 const matchCards = () => {
   let classes = [openCards[0].className, openCards[1].className]
 
@@ -65,27 +75,16 @@ const matchCards = () => {
       // reset array and set equation display timer
       openCards = []
       eqDisplayTime = timer
-    } else {
-      // change background color
-      openCards[0].style.backgroundColor = '#f2e2c4'
-      openCards[0].style.pointerEvents = ''
-      openCards[1].style.backgroundColor = '#f2e2c4'
-      openCards[1].style.pointerEvents = ''
 
-      openCards = []
+      // check score
+      if (totalMatched == 8) {
+        showSummary('YOU WON!')
+      }
+    } else {
+      resetCards()
     }
   } else {
-    openCards[0].style.backgroundColor = '#f2e2c4'
-    openCards[0].style.pointerEvents = ''
-    openCards[1].style.backgroundColor = '#f2e2c4'
-    openCards[1].style.pointerEvents = ''
-    openCards = []
-  }
-}
-
-const checkScore = () => {
-  if (totalMatched == 8) {
-    showSummary('YOU WON!')
+    resetCards()
   }
 }
 
