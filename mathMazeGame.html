@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Ubuntu&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src= "generateEquations.js"></script>
-  <script defer src= "scripts.js"></script>
-  <script defer src= "correctEquationGame.js"></script>
-  <title>Correct Equation Game</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src= "./js/generateEquations.js"></script>
+  <script defer src="./js/scripts.js"></script>
+  <script defer src="./js/mathMazeGame.js"></script>
+  <title>Equation Game</title>
 </head>
 <body>
   <header>
-    <a href="index.html"><img width="400px" src="logo.png" alt="logo"></a>
+    <a href="index.html"><img width="400px" src="./image/logo.png" alt="logo"></a>
   </header>
   <main class="game-board">
     <section class="instructionSection">
-      <h1>Truth or Math Game</h1>
-      <p>Determine the truthfulness of presented mathematical equations</p>
+      <h1>Math Maze</h1>
+      <p>Solve mathematical equations at varying difficulty levels to earn maximum points.</p>
       <section class="instructions">
         <ol>
           <li>Levels:</li>
@@ -44,7 +44,8 @@
             <li>A wrong answer terminates the game</li>
           </ul>
         </ol>
-      </section><button id="playBtn">Start Game</button>
+      </section>
+      <button id="playBtn">Start Game</button>
     </section>
     <section class="gameSection">
       <section class="gameData">
@@ -55,8 +56,6 @@
       <section class="equation">
       </section>
       <section class="options">
-        <button class="ansBtn" value="false">✘</button>
-        <button class="ansBtn" value="true">✔</button>
       </section>
     </section>
     <section class="scoreSection">
@@ -70,6 +69,8 @@
       <button id="playAgain">Play Again</button>
     </section>
   </main>
-  <footer></footer>
+  <footer>
+    <p>&copy Tasneem Ali</p>
+  </footer>
 </body> 
 </html>
