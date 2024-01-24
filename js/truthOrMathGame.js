@@ -5,8 +5,7 @@ const ansBtns = document.querySelectorAll('.ansBtn')
 // displayEquation function to display the equation with four different options
 const displayEquation = () => {
   // get random equation
-  let random = Math.floor(Math.random() * list.length)
-  const eq = list.splice(random, 1)[0]
+  const eq = getRandomEquation()
 
   // get random answer
   let randomAns = Math.floor(Math.random() * eq.options.length)
@@ -25,6 +24,7 @@ const displayEquation = () => {
   // set correct answer
   correctAnswer = ans == eq.correct
 }
+
 // evaluateAns function to check the correctness of the answer
 const evaluateAns = (btn) => {
   const answer = JSON.parse(btn.value)

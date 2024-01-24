@@ -43,14 +43,8 @@ const evaluateAns = (btn, eq) => {
 
 // displayEquation function to display the equation with four different options
 const displayEquation = () => {
-  // check list length
-  if (list.length === 0) {
-    terminateGame(null, 'CONGRATULATIONS! YOU WON!')
-  }
-
   // get random equation
-  let random = Math.floor(Math.random() * list.length)
-  const eq = list.splice(random, 1)[0]
+  const eq = getRandomEquation()
 
   // display equation and answers
   eqSection.innerHTML = `${eq.equation} = ?`

@@ -70,6 +70,18 @@ const startGame = (change = 'decrease') => {
   }
 }
 
+// getRandomEquation function returns a rnadom eqaution
+const getRandomEquation = () => {
+  // check list length
+  if (list.length === 0) {
+    terminateGame(null, 'CONGRATULATIONS! YOU WON!')
+  }
+
+  // get random equation
+  let random = Math.floor(Math.random() * list.length)
+  return list.splice(random, 1)[0]
+}
+
 // showSummary function to display the summary after the game
 const showSummary = (msg) => {
   // display section
