@@ -113,8 +113,12 @@ ul > li {
   width: 80%;
 }
 
+.shuffleGameSection {
+  grid-template-rows: 70px 1fr !important;
+}
+
 .gameSection {
-  /* display: none; */
+  display: none;
   grid-template-rows: 70px 1fr 1fr;
 }
 
@@ -182,10 +186,6 @@ button:hover {
 
 #level {
   color: #8c4f2b;
-}
-
-.ahuffleGameSection {
-  grid-template-rows: 70px 1fr;
 }
 
 .equation-shuffle {

@@ -16,6 +16,7 @@ const finalScoreEl = document.querySelector('#finalScore')
 const totalCorrectAnsEl = document.querySelector('#totalCorrect')
 const gameMsgEl = document.querySelector('#gameMsg')
 const playAgainBtn = document.querySelector('#playAgain')
+const eqShuffleSection = document.querySelector('.equation-shuffle')
 
 let level = ''
 let list = []
@@ -26,6 +27,7 @@ let gameTimer = null
 let totalCorrectAns = 0
 let eqDisplayTime = 0
 let currectEq = null
+let windowsLocation = window.location.href
 
 const intermediateLevel = 50
 const advanceLevel = 100
@@ -36,14 +38,18 @@ const setTimer = () => {
   let secs = timer % 60
   let time = mins > 0 ? `${mins}:${secs}` : secs
   timerEl.innerHTML = time
-  if (timer <= 10) {
+  if (timer <= 10 && !windowsLocation.includes('equationShuffleGame.html')) {
     timerEl.style.color = 'red'
   }
 }
 
-const startGame = () => {
+const startGame = (change = 'decrease') => {
   // decrease time
-  timer--
+  if (change === 'increase') {
+    timer++
+  } else {
+    timer--
+  }
 
   // check if time over
   if (timer < 0) {
@@ -66,7 +72,11 @@ const showSummary = (msg) => {
   finalScoreEl.innerHTML = score
 
   // display total correct answer
-  totalCorrectAnsEl.innerHTML = totalCorrectAns
+  if (windowsLocation.includes('equationShuffleGame.html')) {
+    totalCorrectAnsEl.innerHTML = timerEl.innerHTML
+  } else {
+    totalCorrectAnsEl.innerHTML = score
+  }
 }
 
 const terminateGame = (btn = null, msg) => {
@@ -126,17 +136,38 @@ const resetGame = () => {
   timer = 10
   totalCorrectAns = 0
 
+  if (windowsLocation.includes('equationShuffleGame.html')) {
+    openCards = []
+    totalMatched = 0
+    timer = 0
+  }
+
   // enable answer buttons
-  Array.from(optionSection.children).forEach((btn) => {
-    btn.style.pointerEvents = ''
-    btn.style.backgroundColor = ''
-  })
+  if (!windowsLocation.includes('equationShuffleGame.html')) {
+    Array.from(optionSection.children).forEach((btn) => {
+      btn.style.pointerEvents = ''
+      btn.style.backgroundColor = ''
+    })
+  }
 
   // Get List
-  getList()
+  if (!windowsLocation.includes('equationShuffleGame.html')) {
+    getList()
+  }
   displayEquation()
   setTimer()
-  gameTimer = setInterval(startGame, 1000)
+  if (windowsLocation.includes('equationShuffleGame.html')) {
+    Array.from(eqShuffleSection.children).forEach((card) => {
+      card.addEventListener('click', () => {
+        clickedCard(card)
+      })
+    })
+    gameTimer = setInterval(() => {
+      startGame('increase')
+    }, 1000)
+  } else {
+    gameTimer = setInterval(startGame, 1000)
+  }
 
   // display the game
   scoreSection.style.display = 'none'
