@@ -19,7 +19,7 @@ class Equation {
         Equation.intermediate.push(this)
         break
       case 'advance':
-        this.points = 10
+        this.points = 15
         Equation.advance.push(this)
         break
       default:
